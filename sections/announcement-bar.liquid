@@ -1,0 +1,48 @@
+<style>
+  .announcement {
+    color: {{ section.settings.text_color }};
+    background-color: {{ section.settings.bg_color }};
+    text-transform: uppercase;
+  }
+</style>
+
+{% if section.settings.announcement %}
+  <div class="announcement">
+    <p>{{ section.settings.text }}</p>
+  </div>
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name" : "Announcement Bar",
+  "tag" : "section",
+  "settings" : [
+    {
+      "label" : "Show announcement bar",
+      "type" : "checkbox",
+      "id" : "announcement",
+      "default" : true
+    },
+    {
+      "label" : "Text",
+      "type" : "text",
+      "id" : "text",
+      "default" : "Free Shipping on all orders over $75"
+    },
+    {
+      "label" : "Text Color",
+      "type" : "color",
+      "id" : "text_color",
+      "default" : "#FFFFFF"
+    },
+    {
+      "label" : "Background Color",
+      "type" : "color",
+      "id" : "bg_color",
+      "default" : "#000000"
+    }
+  ]
+}
+{% endschema %}
