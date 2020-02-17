@@ -6,5 +6,51 @@
     "theme_author": "Shopify",
     "theme_documentation_url": "https://github.com/Shopify/themekit",
     "theme_support_url": "https://github.com/Shopify/themekit/issues"
+  },
+  {
+    "name" : "Colors",
+    "settings" : [
+      {
+        "label" : "Main Color",
+        "type" : "color",
+        "id" : "main_color",
+        "default" : "#10504F"
+      },
+      {
+        "label" : "Secondary Color",
+        "type" : "color",
+        "id" : "secondary_color",
+        "default" : "#000000"
+      },
+      {
+        "label" : "Tertiary Color",
+        "type" : "color",
+        "id" : "tertiary_color",
+        "default" : "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name" : "Social Media",
+    "settings" : [
+      {
+        "label" : "Facebook",
+        "type" : "text",
+        "id" : "facebook_link",
+        "default" : "https://facebook.com/"
+      },
+      {
+        "label" : "Instagram",
+        "type" : "text",
+        "id" : "instagram_link",
+        "default" : "https://instagram.com/"
+      },
+      {
+        "label" : "Twitter",
+        "type" : "text",
+        "id" : "twitter_link",
+        "default" : "https://twitter.com/"
+      }
+    ]
   }
 ]

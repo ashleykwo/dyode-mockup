@@ -1,0 +1,66 @@
+<style>
+  .img-with-txt {
+    background-image: url('{{ section.settings.desktop_image | img_url: "2048x"}}');
+  }
+  
+  {% if section.settings.mobile_image %}
+  @media screen and (max-width: 768px) {
+    .img-with-txt {
+    	background-image: url('{{ section.settings.mobile_image | img_url: "2048x"}}');
+    }
+  }
+  {% endif %}
+</style>
+
+<section class="img-with-txt">
+  <div class="wrapper">
+    <h2>{{ section.settings.title }}</h2>
+    <p>{{ section.settings.tagline }}</p>
+    <div class="btn">
+      <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_txt }}</a>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name" : "Image with Text Overlay",
+  "tag" : "section",
+  "settings" : [
+    {
+      "label" : "Desktop Image",
+      "type" : "image_picker",
+      "id" : "desktop_image"
+    },
+    {
+      "label" : "Mobile Image",
+      "type" : "image_picker",
+      "id" : "mobile_image"
+    },
+    {
+      "label" : "Title",
+      "type" : "text",
+      "id" : "title",
+      "default" : "Title Goes Here"
+    },
+    {
+      "label" : "Tagline",
+      "type" : "text",
+      "id" : "tagline",
+      "default" : "Tagline will go right here."
+    },
+    {
+      "label" : "Link",
+      "type" : "url",
+      "id" : "btn_link"
+    },
+    {
+      "label" : "Button Text",
+      "type" : "text",
+      "id" : "btn_txt",
+      "default" : "Shop Now"
+    }
+  ]
+}
+{% endschema %}

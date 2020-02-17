@@ -10,7 +10,6 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'normalize.css' | asset_url | stylesheet_tag }}
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'application.js' | asset_url | script_tag }}
 </head>
 <body>
   {% section 'announcement-bar' %}
@@ -42,5 +41,10 @@
   <main role="main">
     {{ content_for_layout }}
   </main>
+  
+  {% section 'image-with-text' %}
+  {% section 'footer' %}
+  
+  {{ 'application.js' | asset_url | script_tag }}
 </body>
 </html>

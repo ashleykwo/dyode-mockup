@@ -1,0 +1,48 @@
+<section class="footer">
+  <nav class="menu-1">
+    <h4 class="accordion-heading" data-tab="tab1">{{ linklists[section.settings.footer_menu].title }}</h4>
+    <ul id="tab1" class="content">
+      {% for link in linklists[section.settings.footer_menu].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <nav class="menu-2">
+    <h4 class="accordion-heading" data-tab="tab2">{{ linklists[section.settings.secondary_menu].title }}</h4>
+    <ul id="tab2" class="content">
+      {% for link in linklists[section.settings.secondary_menu].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% if section.settings.show_social_media %}
+  <div class="social-media">
+    {% include 'social-media' %}
+  </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name" : "Footer",
+  "tag" : "footer",
+  "settings" : [
+    {
+      "label" : "Footer Menu",
+      "type" : "link_list",
+      "id" : "footer_menu"
+    },
+    {
+      "label" : "Secondary Menu",
+      "type" : "link_list",
+      "id" : "secondary_menu"
+    },
+    {
+      "label" : "Show social media",
+      "type" : "checkbox",
+      "id" : "show_social_media",
+      "default" : true
+    }
+  ]
+}
+{% endschema %}
