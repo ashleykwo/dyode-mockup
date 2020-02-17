@@ -29,7 +29,7 @@ h4 {
 
 h1 { font-size: 5rem } // fix
 h2 { font-size: 5rem }
-h3 { font-size: 4rem } // fix
+h3 { font-size: 3.75rem }
 h4 { font-size: 1.5rem }
 
 .announcement {
@@ -43,10 +43,13 @@ h4 { font-size: 1.5rem }
   padding: 3rem;
 }
 
-.img-with-txt {
-  padding: $padding-gutter-desktop;
+.text-right {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.img-with-txt {
+  padding: $padding-gutter-desktop;
   color: $tertiary_color;
   background-size: cover;
   background-position: 50% 50%;
@@ -75,6 +78,62 @@ h4 { font-size: 1.5rem }
     }
   } // end btn
 } // end img-with-txt
+
+.newsletter {
+  padding: 5rem 9rem;
+  color: $tertiary_color;
+  background: $main_color;
+  font-size: 2rem;
+  
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    
+    & > * {
+      padding: 0 1rem;
+    }
+  }
+  
+  h3 {
+    text-align: center;
+  }
+  
+  .bottom > * {
+  }
+
+  p {
+    width: 50%;
+  }
+  
+  input {
+    width: 30rem;
+    font-size: 1.5rem;
+    margin: 0 .5rem;
+    padding: 1.5rem;
+  }
+  
+  button {
+    width: 17.5rem;
+    font-family: 'Pacifico', cursive;
+    color: $tertiary_color;
+    background: $main_color;
+    box-sizing: border-box;
+    border: 3px solid $tertiary_color;
+    margin: 0 .5rem;
+    padding: 1rem 2rem;
+    vertical-align: bottom;
+  	align-self: center;
+  }
+  
+  button:hover,
+  button:focus {
+    cursor: pointer;
+    color: $main_color;
+    background: $tertiary_color;
+  }
+}
 
 .footer {
   display: grid;
@@ -119,9 +178,35 @@ h4 { font-size: 1.5rem }
 
 
 @media screen and (min-width: 768px) and (max-width: 1080px) {
+  /* IMAGE WITH TEXT SECTION */
   .img-with-txt {
     .wrapper {
       margin: 12.5rem 0;
+    }
+  }
+  
+  /* NEWSLETTER */
+  .newsletter {
+    padding: 5rem 9rem;
+    font-size: 2rem;
+
+    div {
+      display: inline;
+      
+      & > * {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    
+    .image, p {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    .form {
+      display: flex;
+      flex: 0 0;
     }
   }
 }
@@ -131,7 +216,7 @@ h4 { font-size: 1.5rem }
     font-size: 2.25rem;
     padding: .875rem;
   }
-  
+
   /* IMAGE WITH TEXT SECTION */
   h2 {
     font-size: 4rem;
@@ -153,6 +238,31 @@ h4 { font-size: 1.5rem }
         font-size: 1.5rem;
         padding: 1rem 2.5rem;
       }
+    }
+  }
+  
+  /* NEWSLETTER */
+  .newsletter {
+    padding: 5rem 9rem;
+    font-size: 2rem;
+
+    div {
+      display: inline;
+      
+      & > * {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    
+    .image, p {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    .form {
+      display: flex;
+      flex: 0 0;
     }
   }
 
@@ -263,6 +373,31 @@ h4 { font-size: 1.5rem }
         font-size: 1.5rem;
         padding: 1rem 2.5rem;
       }
+    }
+  }
+  
+  /* NEWSLETTER */
+  .newsletter {
+    padding: 5rem 9rem;
+    font-size: 2rem;
+
+    div {
+      display: inline;
+      
+      & > * {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    
+    .image, p {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    .form {
+      display: flex;
+      flex: 0 0;
     }
   }
 

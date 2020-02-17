@@ -1,0 +1,57 @@
+<section class="newsletter">
+  {% form 'customer' %}
+  {% if form.posted_successfully? %}
+  	<p class="newsletter-success">
+      {{ 'general.newsletter.success' | t }}
+    </p>
+  {% else %}
+  <div class="top">
+    <span class="image">{{ 'icon-email.png' | asset_url | img_tag }}</span>
+    <h3>{{ section.settings.title }}</h3>
+  </div>
+  <div class="bottom">
+    <p>{{ section.settings.tagline }}</p>
+    <div class="form">
+      <input type="email" placeholder="{{ 'general.newsletter.placeholder' | t }}">
+      <button type="submit">
+        {{ 'general.newsletter.subscribe' | t }}
+      </button>
+    </div>
+  </div>
+  {% endif %}
+  {% endform %}
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "tag" : "section",
+  "settings": [
+    {
+      "label" : "Title",
+      "type" : "text",
+      "id" : "title",
+      "default" : "Sign up & Stay Connected"
+    },
+    {
+      "label" : "Tagline",
+      "type" : "textarea",
+      "id" : "tagline",
+      "default" : "Sign up for the newsletter and get 20% off! Gain access to exclusive offers and be the first to know when new stuff drops!"
+    },
+    {
+      "label" : "Button Text",
+      "type" : "text",
+      "id" : "btn_txt",
+      "default" : "Subscribe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "Promotional"
+    }
+  ]
+}
+
+{% endschema %}

@@ -3,6 +3,11 @@
     "404": {
       "title": "Not found",
       "subtext_html": "The page you were looking for does not exist"
+    },
+    "newsletter": {
+      "subscribe": "Subscribe",
+      "placeholder": "Your Email Address",
+      "success": "Thanks for signing up!"
     }
   }
 }
