@@ -48,6 +48,40 @@ h4 { font-size: 1.5rem }
   flex-direction: row-reverse;
 }
 
+.collection-list {
+  box-sizing: border-box;
+  
+  .wrapper {
+  	margin: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    .collection {
+      position: relative;
+      margin: 2rem;
+      
+      a {
+        text-decoration: none;
+      }
+      
+      img {
+        width: 100%
+      }
+      
+      .collection-text {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 2.5rem;
+        box-sizing: border-box;
+        color: $tertiary_color;
+        background: $main_color;
+        text-align: center;
+      }
+    }
+  }
+}
+
 .img-with-txt {
   padding: $padding-gutter-desktop;
   color: $tertiary_color;
@@ -178,6 +212,30 @@ h4 { font-size: 1.5rem }
 
 
 @media screen and (min-width: 768px) and (max-width: 1080px) {
+  /* COLLECTION LIST */
+  .collection-list {
+    box-sizing: border-box;
+
+    .wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60vw;
+
+      .collection {
+        margin: 2rem;
+        overflow: hidden;
+
+        .collection-text {
+          padding: 2.5rem;
+        }
+        
+        &:last-child {
+          grid-column: span 2;
+          height: 60vw;
+        }
+      }
+    }
+  }
+
   /* IMAGE WITH TEXT SECTION */
   .img-with-txt {
     .wrapper {
@@ -215,6 +273,30 @@ h4 { font-size: 1.5rem }
   .announcement {
     font-size: 2.25rem;
     padding: .875rem;
+  }
+  
+  /* COLLECTION LIST */
+  .collection-list {
+    box-sizing: border-box;
+
+    .wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60vw;
+
+      .collection {
+        margin: 2rem;
+        overflow: hidden;
+
+        .collection-text {
+          padding: 2.5rem;
+        }
+        
+        &:last-child {
+          grid-column: span 2;
+          height: 60vw;
+        }
+      }
+    }
   }
 
   /* IMAGE WITH TEXT SECTION */
@@ -350,6 +432,30 @@ h4 { font-size: 1.5rem }
   .announcement {
     font-size: 2.25rem;
     padding: .875rem;
+  }
+  
+  /* COLLECTION LIST */
+  .collection-list {
+    box-sizing: border-box;
+
+    .wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60vw;
+
+      .collection {
+        margin: 2rem;
+        overflow: hidden;
+
+        .collection-text {
+          padding: 2rem;
+        }
+        
+        &:last-child {
+          grid-column: span 2;
+          height: 60vw;
+        }
+      }
+    }
   }
   
   /* IMAGE WITH TEXT SECTION */
