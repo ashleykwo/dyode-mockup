@@ -43,6 +43,48 @@ h4 { font-size: 1.5rem }
   padding: 3rem;
 }
 
+.slideshow {
+  position: relative;
+  
+  .slide {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  .dots {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+
+    .dot {
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      margin: 2.5rem 1rem;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.5)
+    }
+
+    .active, .dot:hover {
+      background: #FFFFFF;
+    }
+  }
+}
+
+@-webkit-keyframes fade {
+  from {margin-left: -1000px;} 
+  to {margin-left: 0}
+}
+
+@keyframes fade {
+  from {margin-left: -1000px;} 
+  to {margin-left: 0}
+}
+
+
 .text-right {
   display: flex;
   flex-direction: row-reverse;
@@ -434,6 +476,16 @@ h4 { font-size: 1.5rem }
     padding: .875rem;
   }
   
+  /* SLIDESHOW */
+  .slideshow {
+    .dot {
+      cursor: pointer;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin: 2rem 1rem;
+    }
+  }
+  
   /* COLLECTION LIST */
   .collection-list {
     box-sizing: border-box;
@@ -484,7 +536,7 @@ h4 { font-size: 1.5rem }
   
   /* NEWSLETTER */
   .newsletter {
-    padding: 5rem 9rem;
+    padding: 3rem 6rem;
     font-size: 2rem;
 
     div {

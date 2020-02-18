@@ -1,3 +1,30 @@
+/* SLIDESHOW */
+let currentSlide = 1;
+
+// Initialize slideshow
+slider(currentSlide);
+
+// On dot click get selected slide
+function getSlide(n) {
+  currentSlide = n;
+  slider(currentSlide);
+}
+
+function slider(n) {
+  const slides = document.getElementsByClassName('slide');
+  const dots = document.getElementsByClassName('dot');
+
+  // Hide and deactivate all other slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dots[i].classList.remove('active');
+  }
+
+  // Show selected slide
+  slides[currentSlide - 1].style.display = "block";
+  dots[currentSlide - 1].classList.add('active');
+}
+
 /* ACCORDION */
 // Get tab and content classes in list
 var accordion = document.getElementsByClassName('accordion-heading');

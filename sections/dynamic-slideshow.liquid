@@ -1,0 +1,79 @@
+<section class="slideshow">
+  {% for block in section.blocks %}
+  <div class="slide img-with-txt" style="background-image: url('{{ block.settings.desktop_image | img_url: "2048x"}}')">
+    <div class="wrapper">
+      <h2>{{ block.settings.title }}</h2>
+      <p>{{ block.settings.tagline }}</p>
+      <div class="btn">
+        <a href="{{ block.settings.btn_link }}" style="background-color: {{ block.settings.btn_color }}">{{ block.settings.btn_txt }}</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="dots">
+    {% for block in section.blocks %}
+    <span class="dot" onclick="getSlide({{forloop.index}})"></span>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name" : "Slideshow",
+  "class" : "slideshow",
+  "tag" : "section",
+  "blocks" : [
+    {
+      "name" : "Slide",
+      "type" : "slide",
+      "settings" : [
+        {
+          "label" : "Desktop Image",
+          "type" : "image_picker",
+          "id" : "desktop_image"
+        },
+        {
+          "label" : "Mobile Image",
+          "type" : "image_picker",
+          "id" : "mobile_image"
+        },
+        {
+          "label" : "Title",
+          "type" : "text",
+          "id" : "title",
+          "default" : "Title Goes Here"
+        },
+        {
+          "label" : "Tagline",
+          "type" : "text",
+          "id" : "tagline",
+          "default" : "Tagline will go right here."
+        },
+        {
+          "label" : "Link",
+          "type" : "url",
+          "id" : "btn_link"
+        },
+        {
+          "label" : "Button Text",
+          "type" : "text",
+          "id" : "btn_txt",
+          "default" : "Shop Now"
+        },
+        {
+          "label" : "Button Color",
+          "type" : "color",
+          "id" : "btn_color",
+          "default" : "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slideshow",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
