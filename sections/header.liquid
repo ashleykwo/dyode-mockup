@@ -1,0 +1,46 @@
+<nav class="header">
+  <div class="wrapper">
+    <div class="nav">
+      <div onclick="openMenu()">{{ 'icon-hamburger.svg' | asset_url | img_tag: "Hamburger Navigation Icon", "icon-nav" }}</div>
+      {{ section.settings.logo | img_tag: "Logo", "logo" }}
+      <a href="/cart">{{ 'icon-cart.svg' | asset_url | img_tag: "Cart Icon", "icon-cart" }}</a>
+    </div>
+
+    <div class="menu-links" onclick="closeMenu()">
+    {% for link in linklists.main-menu.links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% if linklists[child_list_handle].links != blank %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        [{% for childlink in linklists[child_list_handle].links %}
+          <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+        {% endfor %}]
+      {% else %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+        <a href="/account">account</a>
+        {{ 'log out'  | customer_logout_link }}
+      {% else %}
+        {{ 'log in ' | customer_login_link }}
+        {{ 'register' | customer_register_link }}
+      {% endif %}
+    {% endif %}
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name" : "Header",
+  "settings" : [
+    {
+      "label" : "Logo",
+      "type" : "image_picker",
+      "id" : "logo"
+    }
+  ]
+}
+{% endschema %}

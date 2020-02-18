@@ -39,8 +39,44 @@ h4 { font-size: 1.5rem }
 }
 
 .header {
-  font-size: 2.5rem;
-  padding: 3rem;
+  background: $main_color;
+  font-size: 2.75rem;
+  padding: 1rem;
+  height: 7.5rem;
+  
+  .wrapper {
+    margin: 0 auto;
+    width: 64rem;
+    
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  
+  .menu-links {
+    text-align: left;
+    
+    a {
+      padding: 1.25rem;
+      color: $tertiary_color;
+      text-decoration: none;
+    }
+  }
+  
+  .icon-nav {
+    display: none;
+  }
+  
+  .logo {
+    display: block;
+    width: 9.5rem;
+    padding: 0 1.25rem;
+  }
+  
+  .icon-cart {
+    display: none;
+  }
 }
 
 .slideshow {
@@ -312,6 +348,76 @@ h4 { font-size: 1.5rem }
 }
 
 @media screen and (min-width: 525px) and (max-width: 768px) {
+  /* HEADER */
+  .header {
+    background: $main_color;
+    font-size: 2.5rem;
+    height: 8.5rem;
+    padding: 1rem 3rem;
+    
+    .wrapper {
+      width: auto;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .menu-links {
+      display: none;
+      background: $main_color;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 6rem;
+      cursor: pointer;
+      
+      a {
+        display: block;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+      }
+      
+      a:hover {
+        color: $main_color;
+        background: $tertiary_color;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+      }
+        
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .icon-nav {
+      display: block;
+      width: 6rem;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 10rem;
+    }
+
+    .icon-cart {
+      display: block;
+      width: 4.5rem;
+    }
+  }
+  
   .announcement {
     font-size: 2.25rem;
     padding: .875rem;
@@ -471,6 +577,76 @@ h4 { font-size: 1.5rem }
 }
 
 @media screen and (max-width: 525px) {
+  /* HEADER */
+  .header {
+    background: $main_color;
+    font-size: 2.5rem;
+    height: 8.5rem;
+    padding: 1rem 3rem;
+    
+    .wrapper {
+      width: auto;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .menu-links {
+      display: none;
+      background: $main_color;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 6rem;
+      cursor: pointer;
+      
+      a {
+        display: block;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+      }
+      
+      a:hover {
+        color: $main_color;
+        background: $tertiary_color;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+      }
+        
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .icon-nav {
+      display: block;
+      width: 6rem;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 10rem;
+    }
+
+    .icon-cart {
+      display: block;
+      width: 4.5rem;
+    }
+  }
+  
   .announcement {
     font-size: 2.25rem;
     padding: .875rem;

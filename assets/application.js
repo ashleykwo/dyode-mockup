@@ -1,3 +1,12 @@
+/* MOBILE MENU */
+function openMenu() {
+  document.getElementsByClassName('menu-links')[0].style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementsByClassName('menu-links')[0].style.display = "none";
+}
+
 /* SLIDESHOW */
 let currentSlide = 1;
 
