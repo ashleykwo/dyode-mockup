@@ -1,0 +1,45 @@
+{% assign collection = collections[section.settings.collection] %}
+{% assign products = collection.products %}
+<section class="featured-collection">
+  <div class="wrapper">
+    <h3>{{ section.settings.title }}</h3>
+    <div class="collection-slider">
+      {% for product in products %}
+      <div class="collection-product">
+        <a href="{{ product.url | within: collection }}">
+          <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+        </a>
+        <h5><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h5>
+        <p class="tag">{{ product.tag }}</p>
+        <p class="price">{{ product.price | money }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "tag" : "section",
+  "settings" : [
+    {
+      "label" : "Title",
+      "type" : "text",
+      "id" : "title",
+      "default" : "New Arrivals"
+    },
+    {
+      "label" : "Collection",
+      "type" : "collection",
+      "id" : "collection"
+    }
+  ],
+  "presets" : [
+    {
+      "name" : "Featured Collection",
+      "category" : "Collection"
+    }
+  ]
+}
+{% endschema %}
