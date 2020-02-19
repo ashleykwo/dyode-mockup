@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="nav">
       <div onclick="openMenu()">{{ 'icon-hamburger.svg' | asset_url | img_tag: "Hamburger Navigation Icon", "icon-nav" }}</div>
-      {{ section.settings.logo | img_tag: "Logo", "logo" }}
+      <a href="/">{{ section.settings.logo | img_tag: "Logo", "logo" }}</a>
       <a href="/cart">{{ 'icon-cart.svg' | asset_url | img_tag: "Cart Icon", "icon-cart" }}</a>
     </div>
 
