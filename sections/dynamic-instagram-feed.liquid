@@ -1,0 +1,62 @@
+<script>
+  let access_token = "{{ section.settings.access_token }}";
+  console.log("test" + access_token);
+  const api_url = "https://graph.instagram.com/me/media?fields=id,media_url,permalink&access_token=" + access_token;
+
+  const getFeed = async () => {
+    let response = await fetch(api_url);
+    let data = await response.json(); 
+    return data;
+  }
+
+  getFeed()
+  .then(data => {
+    for (let i = 0; i < 5; i++) {
+      const ele = document.createElement('div');
+      ele.setAttribute('class', `insta-photo no-${i}`)
+
+      const link = document.createElement('a');
+      link.setAttribute('href', data.data[i].permalink);
+
+      const img = document.createElement('img');
+      img.setAttribute('src', data.data[i].media_url);
+
+      ele.appendChild(link).appendChild(img);
+
+      document.getElementsByClassName('instafeed')[0].appendChild(ele);
+    }
+  })
+</script>
+
+<section class="instagram-feed">
+  <h3>{{ section.settings.title }}</h3>
+  <div class="instafeed"></div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram Feed",
+  "class": "instagram-feed",
+  "settings": [
+    {
+      "label": "Title",
+      "type": "text",
+      "id": "title",
+      "default": "Follow us on Instagram!"
+    },
+    {
+      "label": "Instagram Access Token",
+      "type": "text",
+      "id": "access_token",
+		"info": "Learn [how to generate a short-lived access token](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started) and turn it into a [long-lived access token](https://developers.facebook.com/docs/instagram-basic-display-api/guides/long-lived-access-tokens#get-a-long-lived-token)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Feed",
+      "category": "Social Media"
+    }
+  ]
+}
+
+{% endschema %}
